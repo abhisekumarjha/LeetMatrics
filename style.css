@@ -1,0 +1,211 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Neue Machina", system-ui;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #212121;
+  color: #ffffff;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 8px;
+  background-color: #aaa;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #fff;
+  border-radius: 15px;
+}
+.container {
+  width: 100%;
+  max-width: 1200px;
+  background-color: #2f4f4f;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 0 25px rgba(220, 20, 60, 0.7);
+  gap: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.error-container {
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #dc143c;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  max-width: 90%;
+  text-align: center;
+}
+
+.error-container.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.user-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+label[for="username"] {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+#username {
+  flex: 1;
+  min-width: 250px;
+  padding: 0.75rem;
+  border: 2px solid #4a4a4a;
+  border-radius: 6px;
+  background: #333;
+  color: #fff;
+  transition: border-color 0.3s ease;
+}
+
+#username:focus {
+  border-color: #008000;
+  outline: none;
+}
+
+#search-btn {
+  padding: 0.75rem 1.5rem;
+  background: #008000;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#search-btn:hover {
+  background: #006400;
+}
+
+#search-btn:disabled {
+  background: #4a4a4a;
+  cursor: not-allowed;
+}
+
+.stats-container {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 2rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease 0.1s;
+}
+
+.stats-container.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.progress {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 2rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.progress-item {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+}
+
+.progress-circle {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: conic-gradient(
+    #008000 var(--progress),
+    rgba(128, 128, 128, 0.3) 0
+  );
+  position: relative;
+}
+
+.progress-label {
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.difficulty-tag {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 0.5rem;
+}
+
+.stats-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.stats-cards .card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.stats-cards .card:hover {
+  transform: translateY(-5px);
+}
+
+.stats-cards h3 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.stats-cards p {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #03c403;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .user-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #username {
+    min-width: auto;
+  }
+}

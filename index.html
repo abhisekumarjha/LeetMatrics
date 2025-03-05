@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LeetMatrics</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="logo">LeetMatrics</h1>
+      <div class="error-container" aria-live="polite"></div>
+      <div class="user-container">
+        <label for="username">Enter LeetCode Username</label>
+        <input
+          type="text"
+          id="username"
+          placeholder="e.g. leetcode_user123"
+          aria-describedby="username-help"
+        />
+        <button id="search-btn">Search</button>
+      </div>
+      <div class="stats-container">
+        <div class="progress">
+          <div class="progress-item" aria-label="Easy difficulty progress">
+            <div class="progress-circle easy-progress">
+              <span id="easy-label" class="progress-label"></span>
+              <p class="difficulty-tag">Easy</p>
+            </div>
+          </div>
+          <div class="progress-item" aria-label="Medium difficulty progress">
+            <div class="progress-circle medium-progress">
+              <span id="medium-label" class="progress-label"></span>
+              <p class="difficulty-tag">Medium</p>
+            </div>
+          </div>
+          <div class="progress-item" aria-label="Hard difficulty progress">
+            <div class="progress-circle hard-progress">
+              <span id="hard-label" class="progress-label"></span>
+              <p class="difficulty-tag">Hard</p>
+            </div>
+          </div>
+        </div>
+        <div class="stats-cards" role="region" aria-label="User statistics">
+          <!-- Cards populated from JS -->
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
